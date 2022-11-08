@@ -157,7 +157,8 @@ select {
   display: block;
 }
 
-#btn {
+#btn,
+#reset {
   display: inline-block;
   background: #ccc;
   padding: 0.8em;
@@ -165,7 +166,12 @@ select {
   transition: ease 0.3s all;
 }
 
-#btn:hover {
+#reset {
+  width: fit-content;
+}
+
+#btn:hover,
+#reset:hover {
   background: #777;
   color: #fff;
   cursor: pointer;
@@ -175,4 +181,19 @@ select {
 .fine-print {
   display: block;
   font-size: 0.7em;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .grid-animation {
+    animation: fade-in 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
 }
